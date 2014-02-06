@@ -1,0 +1,17 @@
+- name: Install apache httpd
+  yum: pkg=httpd state=installed
+
+- service: name=httpd enabled=yes state=restarted
+
+- name: Install default php 5.3 and dep packages that require magento
+  yum: pkg={{ item }} state=installed
+  with_items:
+  - php
+  - php-mysql
+  - php-pdo
+  - php-xml
+  - php-mcrypt
+  - php-phpass
+  - php-gd
+  - php-soap
+ 

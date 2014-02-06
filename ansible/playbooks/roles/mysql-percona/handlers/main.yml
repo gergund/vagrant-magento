@@ -1,0 +1,9 @@
+#
+#
+#
+---
+- name: restart mysql
+  service: name=mysql state=restarted
+  ignore_errors: yes
+  tags:
+  - mysql.service
