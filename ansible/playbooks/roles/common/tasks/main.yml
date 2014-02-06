@@ -1,3 +1,4 @@
+---
 - name: Install ntp
   yum: name=ntp state=installed
 
@@ -5,4 +6,11 @@
   yum: name=ntpdate state=installed
 
 - service: name=ntpd enabled=yes state=restarted
-  ignore_errors: yes
+
+- name: Install mc
+  yum: pkg=mc state=installed
+
+- name: change SElinux policy to permissive
+  template: src=selinux_config.j2 dest=/etc/selinux/config owner=root group=root mode=0600
+  
+- command: setenforce 0
