@@ -1,3 +1,4 @@
 mysql_root_passwd: tryit321
+db: magento
 mysql_user: magento
 mysql_passwd: magento
