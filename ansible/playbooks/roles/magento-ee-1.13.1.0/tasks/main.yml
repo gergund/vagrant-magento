@@ -1,3 +1,6 @@
 - name: Untar magento-ee-1.13.1.0 to /var/www/html
-  shell: cp /vagrant/code/magento-ee-1.13.1.0.tar.gz /var/www/html/ && cd /var/www/html/ && tar -zxvf /var/www/html/magento-ee-1.13.1.0.tar.gz && rm -Rf /var/www/html/magento-ee-1.13.1.0.tar.gz
+  shell: cp /vagrant/code/magento-ee-1.13.1.0.tar.gz /var/www/html/ && cd /var/www/html/ && tar -zxvf /var/www/html/magento-ee-1.13.1.0.tar.gz && rm -Rf /var/www/html/magento-ee-1.13.1.0.tar.gz && chown -R apache:apache /var/www/html
   notify: restart httpd
+
+#- name: Importing sample data
+  

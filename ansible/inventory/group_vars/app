@@ -1,0 +1,2 @@
+php_memory_limit: 256M
+apc_php_memory_limit: 256M

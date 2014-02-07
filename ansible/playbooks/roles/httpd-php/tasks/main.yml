@@ -3,6 +3,9 @@
 
 - service: name=httpd enabled=yes state=restarted
 
+- template: src=magento.conf.j2 dest=/etc/httpd/conf.d/magento.conf owner=root group=root mode=0644
+  notify: restart httpd
+
 - name: Install default php 5.3 and dep packages that require magento
   yum: pkg={{ item }} state=installed
   with_items:
@@ -14,4 +17,10 @@
   - php-phpass
   - php-gd
   - php-soap
- 
+  - php-pecl-apc
+  
+- template: src=php.ini.j2 dest=/etc/php.ini owner=root group=root mode=0644
+  notify: restart httpd
+
+- template: src=apc.ini.j2 dest=/etc/php.d/apc.ini owner=root group=root mode=0644
+  notify: restart httpd
