@@ -28,9 +28,9 @@ else
 		/bin/chmod 600 /tmp/vagrant_inf
 	/bin/echo "Done"
 
-	/bin/echo "Run ansible to provision configuration ..."
-		/usr/bin/sudo /usr/bin/ansible-playbook -i /tmp/vagrant_inf /vagrant/ansible/playbooks/site.yml
-	/bin/echo "Done"
+	#/bin/echo "Run ansible to provision configuration ..."
+	#	/usr/bin/sudo /usr/bin/ansible-playbook -i /tmp/vagrant_inf /vagrant/ansible/playbooks/site.yml
+	#/bin/echo "Done"
 
 	touch /tmp/.provisioned
 fi

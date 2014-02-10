@@ -16,11 +16,17 @@
 
 - mysql_db: name={{db}} state=present
 
-- mysql_user: host=localhost name={{mysql_user}} password={{mysql_passwd}} priv={{db}}.*:ALL
+- mysql_user: host={{item}} name={{mysql_user}} password={{mysql_passwd}} priv={{db}}.*:ALL
+  with_items:
+  - ${app_ip}
+  - localhost
+  - 127.0.0.1
+  - ${ansible_fqdn}
   ignore_errors: yes
 
 - mysql_user: host={{item}} name=root password={{mysql_root_passwd}}
   with_items:
+  - ${app_ip}
   - ${ansible_fqdn}
   - 127.0.0.1
   - ::1

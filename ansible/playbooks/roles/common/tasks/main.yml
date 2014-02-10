@@ -10,6 +10,9 @@
 - name: Install mc
   yum: pkg=mc state=installed
 
+- name: Install htop
+  yum: pkg=htop state=installed
+
 - name: change SElinux policy to permissive
   template: src=selinux_config.j2 dest=/etc/selinux/config owner=root group=root mode=0600
   

@@ -1,3 +1,4 @@
+app_ip: 192.168.56.110
 mysql_root_passwd: tryit321
 db: magento
 mysql_user: magento

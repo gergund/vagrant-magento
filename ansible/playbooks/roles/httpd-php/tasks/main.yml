@@ -3,6 +3,9 @@
 
 - service: name=httpd enabled=yes state=restarted
 
+- template: src=httpd.conf.j2 dest=/etc/httpd/conf/httpd.conf owner=root group=root mode=0644
+  notify: restart httpd
+  
 - template: src=magento.conf.j2 dest=/etc/httpd/conf.d/magento.conf owner=root group=root mode=0644
   notify: restart httpd
 
