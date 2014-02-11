@@ -1,4 +1,4 @@
 db_ip: 192.168.56.111
 php_memory_limit: 256M
 apc_php_memory_limit: 256M
-max_client_limit: 72
+max_client_limit: 56
