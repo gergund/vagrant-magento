@@ -9,6 +9,9 @@
 - template: src=magento.conf.j2 dest=/etc/httpd/conf.d/magento.conf owner=root group=root mode=0644
   notify: restart httpd
 
+- template: src=status.conf.j2 dest=/etc/httpd/conf.d/status.conf owner=root group=root mode=0644
+  notify: restart httpd
+
 - name: Install default php 5.3 and dep packages that require magento
   yum: pkg={{ item }} state=installed
   with_items:
@@ -27,3 +30,9 @@
 
 - template: src=apc.ini.j2 dest=/etc/php.d/apc.ini owner=root group=root mode=0644
   notify: restart httpd
+
+- file: path=/var/www/status state=directory owner=root group=root mode=0755
+  
+- copy: src=nrp_apc.php dest=/var/www/status/nrp_apc.php owner=root group=root mode=0644
+
+- copy: src=/usr/share/php-pecl-apc/apc.php dest=/var/www/status/apc.php owner=root group=root mode=0644
