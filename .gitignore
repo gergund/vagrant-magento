@@ -1,3 +1,5 @@
 .vagrant
 code/
 data/
+ansible/playbooks/roles/magento-ee-1.13-data-media/files/magento-ee-1.13-media.tar.gz
+ansible/playbooks/roles/magento-ee-1.13-data-sql/files/magento-ee-1.13-sql.tar.gz

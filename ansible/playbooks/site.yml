@@ -5,9 +5,8 @@
      
 - hosts: app
   roles:
-     - httpd-php
      - app
      
 - hosts: db
   roles:
-     - mysql-percona
+     - db

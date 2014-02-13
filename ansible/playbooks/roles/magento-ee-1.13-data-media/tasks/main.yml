@@ -1,0 +1,6 @@
+- name: Extract sample data - Media
+  copy: src=magento-ee-1.13-media.tar.gz dest=/var/www/html/media/magento-ee-1.13-media.tar.gz owner=root group=root mode=0644
+
+- shell: cd /var/www/html/media && tar -zxvf /var/www/html/media/magento-ee-1.13-media.tar.gz && rm -Rf /var/www/html/media/magento-ee-1.13-media.tar.gz 
+
+- shell: chown -R apache:apache /var/www/html/media

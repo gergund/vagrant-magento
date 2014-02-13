@@ -1,3 +1,6 @@
 ---
 dependencies:
+- { role: httpd-php }
 - { role: magento-ee-1.13.1.0 }
+- { role: magento-ee-1.13-data-media }
+

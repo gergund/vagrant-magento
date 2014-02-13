@@ -1,0 +1,9 @@
+- name: Extract sample data - SQL
+  copy: src=magento-ee-1.13-sql.tar.gz dest=/root/magento-ee-1.13-sql.tar.gz owner=root group=root mode=0644
+
+- shell: cd /root/ && tar -zxvf /root/magento-ee-1.13-sql.tar.gz
+
+- name: Apply SQL dump of sample data for magento 1.13
+  mysql_db:  name={{db}} state=import target=/root/magento-ee-1.13-sql.sql
+
+- shell: rm -Rf /root/magento-ee-1.13-sql.sql /root/magento-ee-1.13-sql.tar.gz

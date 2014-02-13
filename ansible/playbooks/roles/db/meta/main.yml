@@ -1,0 +1,5 @@
+---
+dependencies:
+- { role: mysql-percona }
+- { role: magento-ee-1.13-data-sql }
+
