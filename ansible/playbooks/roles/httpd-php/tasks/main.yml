@@ -24,6 +24,8 @@
   - php-gd
   - php-soap
   - php-pecl-apc
+  - php-pecl-memcache
+  - php-pecl-redis
   
 - template: src=php.ini.j2 dest=/etc/php.ini owner=root group=root mode=0644
   notify: restart httpd

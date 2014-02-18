@@ -4,3 +4,6 @@
 
 [db]
 192.168.56.111	ansible_connection=local
+
+[cache]
+192.168.56.112  ansible_connection=local

@@ -10,3 +10,7 @@
 - hosts: db
   roles:
      - db
+    
+- hosts: cache
+  roles:
+    - cache

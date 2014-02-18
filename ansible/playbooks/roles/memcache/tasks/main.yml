@@ -1,0 +1,5 @@
+---
+- name: Install memcached
+  yum: pkg=memcached state=installed
+  
+- service: name=memcached enabled=yes state=restarted

@@ -1,4 +1,10 @@
 db_ip: 192.168.56.111
+cache_ip: 192.168.56.112
 php_memory_limit: 256M
 apc_php_memory_limit: 256M
-max_client_limit: 50
+max_client_limit: 24
+magento_secure_key: kjfhvslkfjashlfkjfale23fe8k
+db: magento
+mysql_user: magento
+mysql_passwd: magento
+

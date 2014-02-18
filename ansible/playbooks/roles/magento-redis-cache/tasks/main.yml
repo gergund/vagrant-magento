@@ -1,0 +1,8 @@
+---
+- name: Configure Magento with Redis for session-cache-fpc
+  template: src=local-redis-session-cache-fpc.xml.j2 dest=/var/www/html/app/etc/local.xml owner=root group=root mode=0644
+  
+- template: src=Cm_RedisSession.xml.j2 dest=/var/www/html/app/etc/modules/Cm_RedisSession.xml owner=root group=root mode=0644
+
+- shell: rm -Rf /var/www/html/var/cache
+  ignore_errors: yes

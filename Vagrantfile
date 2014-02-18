@@ -36,18 +36,18 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   end
 
-  #config.vm.define :cache do |cache|
-  #	cache.vm.provider :virtualbox do |vb|
-  #		vb.customize ['modifyvm', :id, '--memory', 512]
-  #	end
-  #	cache.vm.network :forwarded_port, guest: 80, host: 8888
-  # 	cache.vm.network :forwarded_port, guest: 443, host: 8443
+  config.vm.define :cache do |cache|
+  	cache.vm.provider :virtualbox do |vb|
+  		vb.customize ['modifyvm', :id, '--memory', 1024]
+  	end
+  	cache.vm.network :forwarded_port, guest: 11211, host: 11211
+   	cache.vm.network :forwarded_port, guest: 11212, host: 11212
 
-  # 	cache.vm.network "private_network", ip: "192.168.56.111"
-  #	cache.vm.provision :shell, :inline => '/vagrant/utils/bootstrap.sh'
-  #	cache.vm.provision :shell, :inline => '/usr/bin/sudo /usr/bin/ansible-playbook --limit=cache -i /tmp/vagrant_inf /vagrant/ansible/playbooks/site.yml'
+   	cache.vm.network "private_network", ip: "192.168.56.112"
+  	cache.vm.provision :shell, :inline => '/vagrant/utils/bootstrap.sh'
+  	cache.vm.provision :shell, :inline => '/usr/bin/sudo /usr/bin/ansible-playbook --limit=cache -i /tmp/vagrant_inf /vagrant/ansible/playbooks/site.yml'
 
-  #end
+  end
   
   
 end
